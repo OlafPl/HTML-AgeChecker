@@ -1,0 +1,38 @@
+<script> //code
+	function AgeChecker() {
+		var x = input;
+
+		var input = document.getElementById("input").value;
+		console.log(input);
+		input = parseInt(input);
+		if(isNaN(input)) {
+			alert("Please enter a valid age");
+        }
+		console.log(input);
+		if (input < 16) { 	
+            document.getElementById("result").innerHTML = "Too bad, you're too young to buy alchohol!";
+            document.getElementById("result").style.backgroundColor = 'red';
+		}
+
+		else {
+
+			if (input == 16 || input == 17) {
+				document.getElementById("result").innerHTML = "Under the old Dutch laws you would be able to buy alchohol, but for the new law you are still too young!";
+				document.getElementById("result").style.backgroundColor = 'yellow';
+			}
+
+			else {
+				document.getElementById("result").innerHTML = "You are old enough to buy alchohol, drink responsibly!";
+                document.getElementById("result").style.backgroundColor = 'green';
+			}
+		}
+	}
+</script>
+
+<body>
+	<h1>Alchohol Age Checker</h1>
+	<h2>According to Dutch Law</h2>
+	Please enter your age <input type="text" id="input">
+	<input onclick="AgeChecker()" type="button" value="click here">
+	<div id="result"> test</div>
+</body>
